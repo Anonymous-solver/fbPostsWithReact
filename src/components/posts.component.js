@@ -19,6 +19,16 @@ class Posts extends Component {
         date: "3 Jan 2022",
         comment: "Tricky",
       },
+	  {
+        title: "Trisha",
+        date: "4 Jan 2022",
+        comment: "Moderate",
+      },
+	  {
+        title: "Jannat",
+        date: "5 Jan 2022",
+        comment: "Awesome",
+      },
     ],
   };
   render() {

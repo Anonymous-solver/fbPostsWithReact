@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
+import Like from './like.component';
  class Post extends Component {
+	 state = {
+		like: false,
+	 }
+	 handleLike = () => {
+		 const like = this.state.like
+		 this.setState({like: !like})
+	 }
+	
 	 render() { 
 		 const {title, date, comment} = this.props
 		 return (
@@ -13,7 +22,7 @@ import React, { Component } from 'react';
 					<p className = 'card-text'>{comment}</p>
 					<hr />
 					<input type="text" placeholder='comment' />
-					<span style = {{margin: '10px'}}><i className = 'fa fa-thumbs-up'/></span>
+					<button onClick = {this.handleLike} style = {{margin: '10px'}}><Like like = {this.state.like}></Like></button>
 				</div>
 			</div>
 			<br />
