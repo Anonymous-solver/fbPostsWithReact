@@ -7,8 +7,7 @@ class Like extends Component {
 			{
 				this.props.like
 				? <i className = 'fa fa-thumbs-up'/>
-				: <i className = "fa fa-thumbs-o-up"/>
-				
+				: <i className = "fa fa-thumbs-o-up"/>	
 			}
 			</>
 		);
