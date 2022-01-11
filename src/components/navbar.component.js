@@ -81,8 +81,15 @@ class Navbar extends Component {
 	
 	  handleRemove = (id) => {
 		let posts = [...this.state.posts];
+		const post = posts.find((post) => post.id === id);
+		let likeCount = this.state.likeCount;
+		let disLikeCount = this.state.disLikeCount;
+		if(post.like === true) likeCount--;
+		else if (post.dislike === true) disLikeCount--;
 		posts = posts.filter((post) => post.id !== id);
 		this.setState({ posts });
+		this.setState({likeCount: likeCount})
+		this.setState({disLikeCount: disLikeCount})
 	  };
 	
 	  handleAdd = () => {
