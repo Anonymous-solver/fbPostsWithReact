@@ -18,13 +18,13 @@ import image from '../images/post.png'
 						<hr />
 						<input type="text" placeholder='comment' />
 						<br />
-						<button onClick = {() => handleLike(id)} style = {{margin: '10px'}} display={!dislike}><Like like = {like}></Like></button>
-						<button onClick = {() => handleDislike(id)} style = {{margin: '10px'}} display={!like}> <Dislike dislike={dislike}></Dislike></button>
+						<button onClick = {() => handleLike(id)} style = {{margin: '10px'}} disabled={dislike}><Like like = {like}></Like></button>
+						<button onClick = {() => handleDislike(id)} style = {{margin: '10px'}} disabled={like}> <Dislike dislike={dislike}></Dislike></button>
 						<button className="btn btn-danger" onClick = {() => handleRemove(id)}>Remove Post</button>
 					</div>
 				</div>
 			<br />
-		  </>
+		   </>
 		 );
 	 }
  }

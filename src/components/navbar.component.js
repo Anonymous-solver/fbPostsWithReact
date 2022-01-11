@@ -54,27 +54,29 @@ class Navbar extends Component {
 		  },
 		],
 		likeCount: 0,
-		disLikeCount: 0
+		disLikeCount: 0,
 	  };
 	
 	  handleLike = (id) => {
 		const posts = [...this.state.posts];
 		const post = posts.find((post) => post.id === id);
-		let count = this.state.likeCount;
-		if (post.like === false) count++;
+		let likeCount = this.state.likeCount;
+		if (post.like === false) likeCount++;
+		else likeCount--;
 		post.like = !post.like;
 		this.setState({ posts });
-		this.setState({likeCount: count})
+		this.setState({likeCount: likeCount})
 	  };
 	
 	  handleDislike = (id) => {
 		const posts = [...this.state.posts];
 		const post = posts.find((post) => post.id === id);
+		let disLikeCount = this.state.disLikeCount;
+		if (post.dislike === false) disLikeCount++;
+		else disLikeCount--;
 		post.dislike = !post.dislike;
 		this.setState({ posts });
-		let count = this.state.disLikeCount;
-		count++;
-		this.setState({disLikeCount: count})
+		this.setState({disLikeCount: disLikeCount})
 	  };
 	
 	  handleRemove = (id) => {
