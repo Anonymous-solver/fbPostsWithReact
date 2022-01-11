@@ -7,16 +7,16 @@ import image from '../images/post.png'
 		 const {handleLike, handleDislike, handleRemove, id, title, date, comment, like, dislike} = this.props
 		 return (	
 			<>
-				<div className="card text-white bg-success mb-3" style = {{width: '18rem', border: "1px solid gray", boxShadow : "1px 1px 10px gray", margin: '5px', backgroundColor: 'lightsteelblue'}}>
+				<div className="card text-white bg-success mb-3" style = {{marginTop: '5px', marginLeft: '30%', width: '30rem', border: "1px solid gray", boxShadow : "1px 1px 10px gray", padding: '5px', backgroundColor: 'lightsteelblue'}}>
 					<div className = "card-body">
 						<h5 className = 'card-title'>{title}</h5>
-						<img style={{width: "60%"}} src={image} alt="null" />
+						<img style={{width: "70%"}} src={image} alt="null" />
 						<hr />
 						<p className = 'card-text'>{date}</p>
 						<hr />
 						<p className = 'card-text'>{comment}</p>
 						<hr />
-						<input type="text" placeholder='comment' />
+						<input type="text" style={{border: '1px solid gray', width: '25rem', borderRadius: '10px'}} placeholder=' comment' />
 						<br />
 						<button onClick = {() => handleLike(id)} style = {{margin: '10px'}} disabled={dislike}><Like like = {like}></Like></button>
 						<button onClick = {() => handleDislike(id)} style = {{margin: '10px'}} disabled={like}> <Dislike dislike={dislike}></Dislike></button>

@@ -5,7 +5,7 @@ class Posts extends Component {
   render() {
     return (
       <>
-	    <button onClick={this.props.handleAdd}>Add new post</button>
+		<div>
         {this.props.posts.map((post) => (
           <Post
             key={post.id}
@@ -20,6 +20,7 @@ class Posts extends Component {
 			dislike={post.dislike}
           ></Post>
         ))}
+		</div>
       </>
     );
   }

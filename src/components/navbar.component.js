@@ -6,7 +6,7 @@ class Navbar extends Component {
 		posts: [
 		  {
 			id: 0,
-			title: "Anik",
+			title: "Post-1",
 			date: "1 Jan 2022",
 			comment: "Good",
 			like: false,
@@ -14,7 +14,7 @@ class Navbar extends Component {
 		  },
 		  {
 			id: 1,
-			title: "Farha",
+			title: "Post-2",
 			date: "2 Jan 2022",
 			comment: "Not Bad",
 			like: false,
@@ -22,7 +22,7 @@ class Navbar extends Component {
 		  },
 		  {
 			id: 2,
-			title: "Dipjal",
+			title: "Post-3",
 			date: "3 Jan 2022",
 			comment: "Tricky",
 			like: false,
@@ -30,7 +30,7 @@ class Navbar extends Component {
 		  },
 		  {
 			id: 3,
-			title: "Trisha",
+			title: "Post-4",
 			date: "4 Jan 2022",
 			comment: "Moderate",
 			like: false,
@@ -38,7 +38,7 @@ class Navbar extends Component {
 		  },
 		  {
 			id: 4,
-			title: "Jannat",
+			title: "Post-5",
 			date: "5 Jan 2022",
 			comment: "Awesome",
 			like: false,
@@ -46,7 +46,7 @@ class Navbar extends Component {
 		  },
 		  {
 			id: 5,
-			title: "Toya",
+			title: "Post-6",
 			date: "6 Jan 2022",
 			comment: "Pretty",
 			like: false,
@@ -98,11 +98,12 @@ class Navbar extends Component {
   render() {
     return (
       <>
-        <nav className="navbar navbar-light bg-dark">
-          <a className="navbar-brand" href="#" style = {{color: 'white'}}>Facebook</a>
-		  <a className="navbar-brand" href="#" style = {{color: 'white'}} >Like {this.state.likeCount}</a>
-		  <a className="navbar-brand" href="#" style = {{color: 'white'}} >Dislike {this.state.disLikeCount}</a>
+        <nav className="navbar fixed-top navbar-light bg-dark">
+          <a className="navbar-brand" href="#" style = {{marginLeft: '2%', color: 'white'}}>Facebook</a>
+		  <h5 className="navbar-brand" style = {{marginRight: '20px', color: 'white'}} >Like {this.state.likeCount}</h5>
+		  <h5 className="navbar-brand" style = {{color: 'white'}} >Dislike {this.state.disLikeCount}</h5>
         </nav>
+		<button style={{marginTop: '60px'}} onClick={this.handleAdd}>Add new post</button>
 		<Posts handleLike={this.handleLike} handleDislike={this.handleDislike} handleRemove={this.handleRemove} handleAdd={this.handleAdd} posts={this.state.posts}></Posts>
 		</>
     );
