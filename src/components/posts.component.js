@@ -5,22 +5,23 @@ class Posts extends Component {
   render() {
     return (
       <>
-		<div>
-        {this.props.posts.map((post) => (
-          <Post
-            key={post.id}
-            handleRemove={this.props.handleRemove}
-            handleLike={this.props.handleLike}
-			handleDislike={this.props.handleDislike}
-            id={post.id}
-            title={post.title}
-            date={post.date}
-            comment={post.comment}
-            like={post.like}
-			dislike={post.dislike}
-          ></Post>
-        ))}
-		</div>
+        <div>
+          {this.props.posts.map((post) => (
+            <Post
+              key={post.id}
+              handleRemove={this.props.handleRemove}
+              handleLike={this.props.handleLike}
+              handleDislike={this.props.handleDislike}
+              id={post.id}
+              title={post.title}
+			  img= {post.img}
+              date={post.date}
+              comment={post.comment}
+              like={post.like}
+              dislike={post.dislike}
+            ></Post>
+          ))}
+        </div>
       </>
     );
   }
