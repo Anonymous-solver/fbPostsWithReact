@@ -156,7 +156,7 @@ class Navbar extends Component {
     else if (post.dislike === true) disLikeCount--;
 	else if (post.love === true) loveCount--;
 	else if (post.sad === true) sadCount--;
-	else if (post.share === true) shareCount--;
+	if (post.share === true) shareCount--;
     posts = posts.filter((post) => post.id !== id);
     this.setState({ posts });
     this.setState({ likeCount: likeCount });
