@@ -6,7 +6,7 @@ class Dislike extends Component {
 			<>
 			{
 				this.props.dislike
-				? <i className = 'fa fa-thumbs-down'/>
+				? <i className = 'fa fa-thumbs-down' style={{color:'blue'}}/>
 				: <i className = "fa fa-thumbs-o-down"/>	
 			}
 			</>

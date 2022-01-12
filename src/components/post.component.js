@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
 import Dislike from './dislike.component';
 import Like from './like.component';
+import Love from './love.component';
+import Sad from './sad.component';
  class Post extends Component {
 	 render() {		 
-		 const {handleLike, handleDislike, handleRemove, id, title, img, date, comment, like, dislike} = this.props
+		 const {handleLike, handleDislike, handleLove, handleSad, handleRemove, id, title, img, date, description, like, dislike, love, sad} = this.props
 		 return (	
 			<>
-				<div className="card text-white bg-success mb-3" style = {{marginTop: '5px', marginLeft: '30%', width: '30rem', border: "1px solid gray", boxShadow : "1px 1px 10px gray", padding: '5px', backgroundColor: 'lightsteelblue'}}>
+				<div className="card text-black bg-light mb-3" style = {{marginTop: '5px', marginLeft: '20%', height: '35rem', width: '50rem', border: "1px solid gray", boxShadow : "1px 1px 10px gray", padding: '5px', backgroundColor: 'lightsteelblue'}}>
 					<div className = "card-body">
 						<h5 className = 'card-title'>{title}</h5>
-						<img style={{width: "70%", borderRadius: '5px'}} src={img} alt="null" />
-						<hr />
-						<p className = 'card-text'>{date}</p>
-						<hr />
-						<p className = 'card-text'>{comment}</p>
-						<hr />
-						<input type="text" style={{border: '1px solid gray', width: '25rem', borderRadius: '10px'}} placeholder=' comment' />
+						<span className = 'card-text'>{date}</span>
 						<br />
-						<button onClick = {() => handleLike(id)} style = {{margin: '10px'}} disabled={dislike}><Like like = {like}></Like></button>
-						<button onClick = {() => handleDislike(id)} style = {{margin: '10px'}} disabled={like}> <Dislike dislike={dislike}></Dislike></button>
-						<button className="btn btn-danger" onClick = {() => handleRemove(id)}>Remove Post</button>
+						<img style={{width: "70%", height: '15rem', borderRadius: '5px'}} src={img} alt="null" />
+						<hr />
+						<p className = 'card-text'>{description}</p>
+						<hr />
+						<input type="text" style={{border: '1px solid gray', width: '25rem', borderRadius: '10px'}} placeholder=' Write a comment...' />
+						<br />
+						<button onClick = {() => handleLike(id)} style = {{margin: '10px', borderRadius: '50px', border: '1px solid white'}} disabled={dislike || love || sad}><Like like = {like}></Like></button>
+						<button onClick = {() => handleDislike(id)} style = {{margin: '10px', borderRadius: '50px', border: '1px solid white'}} disabled={like || love || sad}> <Dislike dislike={dislike}></Dislike></button>
+						<button onClick = {() => handleLove(id)} style = {{margin: '10px', borderRadius: '50px', border: '1px solid white'}} disabled={dislike || like || sad}> <Love love={love}></Love></button>
+						<button onClick = {() => handleSad(id)} style = {{margin: '10px', borderRadius: '50px', border: '1px solid white'}} disabled={dislike || like  || love}> <Sad sad={sad}></Sad></button>
+						<button style={{marginLeft: '260px'}} onClick = {() => handleRemove(id)}><i className="fa fa-trash-o"></i></button>
 					</div>
 				</div>
 			<br />

@@ -12,13 +12,17 @@ class Posts extends Component {
               handleRemove={this.props.handleRemove}
               handleLike={this.props.handleLike}
               handleDislike={this.props.handleDislike}
+			  handleLove={this.props.handleLove}
+			  handleSad={this.props.handleSad}
               id={post.id}
               title={post.title}
 			  img= {post.img}
               date={post.date}
-              comment={post.comment}
+              description={post.description}
               like={post.like}
               dislike={post.dislike}
+			  love={post.love}
+			  sad={post.sad}
             ></Post>
           ))}
         </div>
