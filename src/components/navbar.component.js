@@ -15,7 +15,8 @@ class Navbar extends Component {
         like: false,
         dislike: false,
 		love: false,
-		sad: false
+		sad: false,
+		share: false
       },
       {
         id: 2,
@@ -26,7 +27,8 @@ class Navbar extends Component {
         like: false,
         dislike: false,
 		love: false,
-		sad: false
+		sad: false,
+		share: false
       },
       {
         id: 3,
@@ -37,7 +39,8 @@ class Navbar extends Component {
         like: false,
         dislike: false,
 		love: false,
-		sad: false
+		sad: false,
+		share: false
       },
       {
         id: 4,
@@ -48,7 +51,8 @@ class Navbar extends Component {
         like: false,
         dislike: false,
 		love: false,
-		sad: false
+		sad: false,
+		share: false
       },
       {
         id: 5,
@@ -59,7 +63,8 @@ class Navbar extends Component {
         like: false,
         dislike: false,
 		love: false,
-		sad: false
+		sad: false,
+		share: false
       },
       {
         id: 6,
@@ -70,13 +75,15 @@ class Navbar extends Component {
         like: false,
         dislike: false,
 		love: false,
-		sad: false
+		sad: false,
+		share: false
       },
     ],
     likeCount: 0,
     disLikeCount: 0,
 	loveCount: 0,
 	sadCount: 0,
+	shareCount: 0,
 	count: 6,
 	// show: false,
 	// title: ''
@@ -126,6 +133,17 @@ class Navbar extends Component {
     this.setState({ sadCount });
   };
 
+  handleShare = (id) => {
+    const posts = [...this.state.posts];
+    const post = posts.find((post) => post.id === id);
+    let shareCount = this.state.shareCount;
+    if (post.share === false) shareCount++;
+    else shareCount--;
+    post.share = !post.share;
+    this.setState({ posts });
+    this.setState({ shareCount });
+  };
+
   handleRemove = (id) => {
     let posts = [...this.state.posts];
     const post = posts.find((post) => post.id === id);
@@ -133,16 +151,19 @@ class Navbar extends Component {
     let disLikeCount = this.state.disLikeCount;
 	let loveCount = this.state.loveCount;
 	let sadCount = this.state.sadCount;
+	let shareCount = this.state.shareCount;
     if (post.like === true) likeCount--;
     else if (post.dislike === true) disLikeCount--;
 	else if (post.love === true) loveCount--;
 	else if (post.sad === true) sadCount--;
+	else if (post.share === true) shareCount--;
     posts = posts.filter((post) => post.id !== id);
     this.setState({ posts });
     this.setState({ likeCount: likeCount });
     this.setState({ disLikeCount: disLikeCount });
 	this.setState({ loveCount: loveCount });
 	this.setState({ sadCount });
+	this.setState({ shareCount });
   };
 
   handleAdd = () => {
@@ -157,7 +178,8 @@ class Navbar extends Component {
         like: false,
         dislike: false,
 		love: false,
-		sad: false
+		sad: false,
+		share: false
 	  }
 	  let posts = [...this.state.posts, newPost];
 	  this.setState({ posts });
@@ -167,9 +189,9 @@ class Navbar extends Component {
 	// this.setState({show: show})
   };
 
-  handleSubmit = () => {
-	  alert()
-  }
+//   handleSubmit = () => {
+// 	  alert()
+//   }
   render() {
     return (
       <>
@@ -182,7 +204,7 @@ class Navbar extends Component {
             <i style={{marginTop: '20px'}} className="fa fa-facebook"></i>
           </a>
 
-		  <span style={{marginBottom: '10px', height: '8px', width: '70%', marginRight: '10px'}} className="input-group mb-3">
+		  <span style={{marginBottom: '10px', height: '8px', width: '50%', marginRight: '15%'}} className="input-group mb-3">
 			<div className="input-group-prepend">
 				<span className="input-group-text">All</span>
 			</div>
@@ -191,6 +213,10 @@ class Navbar extends Component {
 			<span className="input-group-text" ><i style={{padding: '4px'}} className="fa fa-search"></i></span>
 			</div>
 		  </span>
+
+		  {/* <i style={{margin: '5px'}} className="fa fa-user" aria-hidden="true">Anik</i> */}
+
+		 
 
 
           <h5
@@ -211,6 +237,11 @@ class Navbar extends Component {
 		  <h5 className="navbar-brand" style={{ color: "white" }}>
             Sad {this.state.sadCount}
           </h5>
+
+		  <h5 className="navbar-brand" style={{ color: "white" }}>
+            Share {this.state.shareCount}
+          </h5>
+
         </nav>
 		
         <button style={{ marginTop: "80px" }} onClick={this.handleAdd}>
@@ -244,6 +275,7 @@ class Navbar extends Component {
           handleDislike={this.handleDislike}
 		  handleLove={this.handleLove}
 		  handleSad={this.handleSad}
+		  handleShare={this.handleShare}
           handleRemove={this.handleRemove}
           handleAdd={this.handleAdd}
           posts={this.state.posts}

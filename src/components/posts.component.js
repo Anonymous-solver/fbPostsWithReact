@@ -14,6 +14,7 @@ class Posts extends Component {
               handleDislike={this.props.handleDislike}
 			  handleLove={this.props.handleLove}
 			  handleSad={this.props.handleSad}
+			  handleShare={this.props.handleShare}
               id={post.id}
               title={post.title}
 			  img= {post.img}
@@ -23,6 +24,7 @@ class Posts extends Component {
               dislike={post.dislike}
 			  love={post.love}
 			  sad={post.sad}
+			  share={post.share}
             ></Post>
           ))}
         </div>

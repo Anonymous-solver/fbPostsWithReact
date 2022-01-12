@@ -7,7 +7,7 @@ class Sad extends Component {
 			{
 				this.props.sad
 				? <i className="fa fa-frown-o" style={{color:'blue'}}></i>
-				: <i class="fa fa-frown-o"></i>
+				: <i className="fa fa-frown-o"></i>
 			}
 			</>
 		);
