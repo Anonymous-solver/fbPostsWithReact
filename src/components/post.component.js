@@ -12,7 +12,7 @@ import Share from './share.component';
 				<div className="card text-black bg-light mb-3" style = {{marginTop: '5px', marginLeft: '20%', height: '35rem', width: '50rem', border: "1px solid gray", boxShadow : "1px 1px 10px gray", padding: '5px', backgroundColor: 'lightsteelblue'}}>
 					<div className = "card-body">
 						<h5 className = 'card-title'>{title}</h5>
-						<span className = 'card-text'>{date}</span>
+						<span style = {{color: 'gray'}} className = 'card-text'>{date}</span>
 						<br />
 						<img style={{width: "70%", height: '15rem', borderRadius: '5px'}} src={img} alt="null" />
 						<hr />
