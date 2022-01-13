@@ -4,9 +4,12 @@ import Like from './reactions/like.component';
 import Love from './reactions/love.component';
 import Sad from './reactions/sad.component';
 import Share from './reactions/share.component';
+import img from '../images/post.png';
+
+
  class Post extends Component {
 	 render() {		 
-		 const {handleLike, handleDislike, handleLove, handleSad, handleShare, handleRemove, id, title, img, date, description, like, dislike, love, sad, share} = this.props
+		 const {handleLike, handleDislike, handleLove, handleSad, handleShare, handleRemove, id, title, date, description, like, dislike, love, sad, share} = this.props
 		 return (	
 			<>
 				<div className="card text-black bg-light mb-3" style = {{marginTop: '5px', marginLeft: '20%', height: '35rem', width: '50rem', border: "1px solid gray", boxShadow : "1px 1px 10px gray", padding: '5px', backgroundColor: 'lightsteelblue'}}>

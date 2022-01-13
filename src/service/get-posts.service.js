@@ -1,7 +1,7 @@
-import postData from './post-data.service.json';
+import postData from './post-data.json';
 
 function getPostData(){
-	console.log(postData.posts)
+	return postData.posts;
 }
 
 export default getPostData;
