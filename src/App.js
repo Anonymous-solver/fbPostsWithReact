@@ -190,6 +190,7 @@ class App extends Component {
     const newPost = {
       id: count,
       title: this.state.title,
+	  date: `${new Date().toDateString()} ${new Date().toLocaleTimeString()}`,
       img: img,
       description: this.state.description,
       like: false,
@@ -204,6 +205,7 @@ class App extends Component {
     show = !show;
     this.setState({ show: show });
   };
+  
   render() {
 	const {likeCount, disLikeCount, loveCount, shareCount, sadCount} = this.state
     return (
@@ -229,7 +231,6 @@ class App extends Component {
               onSubmit={this.handleSubmit}
               style={{ textAlign: "center", margin: "20px" }}
             >
-              {/* <input style={{paddingLeft: '10px', marginTop: '5px', borderRadius: '50px', border: '1px solid gray'}} type="text" name="id" id="id"  placeholder="id"/><br /> */}
               <input
                 style={{
                   paddingLeft: "10px",
@@ -248,8 +249,6 @@ class App extends Component {
                 required
               />
               <br />
-              {/* <input style={{paddingLeft: '10px',marginTop: '5px', borderRadius: '50px', border: '1px solid gray'}} type="text" name="img" id="img" value='' placeholder="img"/><br />
-				<input style={{paddingLeft: '10px',marginTop: '5px', borderRadius: '50px', border: '1px solid gray'}} type="text" name="date" id="date" value='' placeholder="date"/><br /> */}
               <input
                 style={{
                   paddingLeft: "10px",
@@ -268,7 +267,6 @@ class App extends Component {
                 required
               />
               <br />
-              {/* <input style={{paddingLeft: '10px',marginTop: '5px', borderRadius: '50px', border: '1px solid gray'}} type="text" name="comment" id="comment" value='' placeholder="comment"/><br /> */}
               <input
                 className="btn btn-primary"
                 style={{

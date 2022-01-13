@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Dislike from './dislike.component';
-import Like from './like.component';
-import Love from './love.component';
-import Sad from './sad.component';
-import Share from './share.component';
+import Dislike from './reactions/dislike.component';
+import Like from './reactions/like.component';
+import Love from './reactions/love.component';
+import Sad from './reactions/sad.component';
+import Share from './reactions/share.component';
  class Post extends Component {
 	 render() {		 
 		 const {handleLike, handleDislike, handleLove, handleSad, handleShare, handleRemove, id, title, img, date, description, like, dislike, love, sad, share} = this.props
