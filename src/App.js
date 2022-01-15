@@ -16,6 +16,7 @@ class App extends Component {
     show: false,
     title: "",
     description: "",
+	commentEmpty: ""
   };
 
   componentDidMount() {
@@ -93,6 +94,7 @@ class App extends Component {
   handleAdd = () => {
     let show = this.state.show;
     show = !show;
+	this.setState({show, title: '', description: ''})
     this.setState({ show });
   };
 
@@ -106,6 +108,7 @@ class App extends Component {
       date: `${new Date().toDateString()} ${new Date().toLocaleTimeString()}`,
       img: img,
       description: this.state.description,
+	  comment: '',
       like: false,
       dislike: false,
       love: false,
@@ -117,6 +120,7 @@ class App extends Component {
     show = !show;
 	this.setState({posts, show, title: '', description: ''})
   };
+
 
   render() {
     const { likeCount, disLikeCount, loveCount, shareCount, sadCount, posts } =
@@ -145,16 +149,18 @@ class App extends Component {
         </button>
 
         {this.state.show ? (
-          <div>
+          <div style={{border: '1px solid gray', width: "50rem", marginLeft: '20%', borderRadius: '10px',   marginTop: "5px",   boxShadow: "1px 1px 10px gray"}}>
             <form
               onSubmit={this.handleSubmit}
               style={{ textAlign: "center", margin: "20px" }}
             >
               <input
                 style={{
+				  height: "3rem",
+				  width: "40rem",
                   paddingLeft: "10px",
                   marginTop: "5px",
-                  borderRadius: "50px",
+                  borderRadius: "20px",
                   border: "1px solid gray",
                 }}
                 type="text"
@@ -168,13 +174,15 @@ class App extends Component {
                 required
               />
               <br />
-              <input
+              <textarea
                 style={{
-                  paddingLeft: "10px",
+			      width: "40rem",
+                  padding: "20px",
                   marginTop: "5px",
-                  borderRadius: "50px",
+                  borderRadius: "10px",
                   border: "1px solid gray",
                 }}
+				cols="50" rows="5"
                 type="text"
                 name="description"
                 id="description"
@@ -182,7 +190,7 @@ class App extends Component {
                 onChange={(event) => {
                   this.setState({ description: event.target.value });
                 }}
-                placeholder="description"
+                placeholder="write here..."
                 required
               />
               <br />
@@ -212,6 +220,7 @@ class App extends Component {
           handleRemove={this.handleRemove}
           handleAdd={this.handleAdd}
           posts={posts}
+		  commentEmpty={this.state.commentEmpty}
         ></Posts>
       </>
     );

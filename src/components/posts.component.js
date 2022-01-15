@@ -11,6 +11,7 @@ class Posts extends Component {
       handleSad,
       handleShare,
       handleLike,
+	  state
     } = this.props;
     return (
       <>
@@ -24,6 +25,7 @@ class Posts extends Component {
               handleLove={handleLove}
               handleSad={handleSad}
               handleShare={handleShare}
+			  state={state}
               id={post.id}
               title={post.title}
               img={post.img}
@@ -34,6 +36,8 @@ class Posts extends Component {
               love={post.love}
               sad={post.sad}
               share={post.share}
+			  comment={post.comment}
+			  commentEmpty={post.commentEmpty}
             ></Post>
           ))}
         </div>
