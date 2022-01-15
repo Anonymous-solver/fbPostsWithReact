@@ -11,6 +11,7 @@ class Post extends Component {
   state = {
     comments: [],
   };
+
   onChange(event) {
     commentText = event.target.value;
   }
@@ -84,7 +85,8 @@ class Post extends Component {
                   border: "1px solid white",
                   width: "25rem",
                   borderRadius: "10px",
-				  padding: '10px'
+				  padding: '10px',
+				  outlineColor : "#F2F3F5"
                 }}
                 value={commentEmpty}
                 placeholder=" Write a comment..."

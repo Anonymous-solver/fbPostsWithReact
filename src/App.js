@@ -162,6 +162,7 @@ class App extends Component {
                   marginTop: "5px",
                   borderRadius: "20px",
                   border: "1px solid gray",
+				  outline: "none"
                 }}
                 type="text"
                 name="title"
@@ -181,6 +182,7 @@ class App extends Component {
                   marginTop: "5px",
                   borderRadius: "10px",
                   border: "1px solid gray",
+				  outline: "none"
                 }}
 				cols="50" rows="5"
                 type="text"
