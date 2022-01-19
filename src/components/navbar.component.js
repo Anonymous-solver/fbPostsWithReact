@@ -1,25 +1,35 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
   render() {
-    const { likeCount, disLikeCount, loveCount, shareCount, sadCount } =
-      this.props;
+    const {
+      likeCount,
+      disLikeCount,
+      loveCount,
+      shareCount,
+      sadCount,
+      loggedInUser,
+    } = this.props;
     return (
       <>
-        <nav style={{ height: "80px" }} className="navbar fixed-top navbar-light bg-primary">
-			<a
-				className="navbar-brand"
-				href="/"
-				style={{ marginLeft: "2%", color: "white" }}
-			>
+        <nav
+          style={{ height: "80px" }}
+          className="navbar fixed-top navbar-light bg-primary"
+        >
+          <a
+            className="navbar-brand"
+            href="/"
+            style={{ marginLeft: "2%", color: "white" }}
+          >
             <i style={{ marginTop: "20px" }} className="fa fa-facebook"></i>
-          	</a>
+          </a>
 
           <span
             style={{
               marginBottom: "10px",
               height: "8px",
-              width: "50%",
+              width: "35%",
               marginRight: "15%",
             }}
             className="input-group mb-3"
@@ -27,7 +37,7 @@ class Navbar extends Component {
             <div className="input-group-prepend">
               <span className="input-group-text">All</span>
             </div>
-			
+
             <input
               type="text"
               className="form-control"
@@ -40,6 +50,29 @@ class Navbar extends Component {
                 <i style={{ padding: "4px" }} className="fa fa-search"></i>
               </span>
             </div>
+          </span>
+
+          <span>
+            <img
+              style={{ width: "50%", borderRadius: "100px" }}
+              src={loggedInUser.photoURL}
+              alt="null"
+            />
+          </span>
+          <span>
+            <Link to="/login">
+                <button
+                    style={{
+                        marginRight: "20px",
+                        padding: "8px",
+                        border: "1px solid white",
+                        boxShadow: "1px 1px 10px gray",
+                        borderRadius: "20px",
+                    }}
+                    >
+                    <i className="fa fa-sign-out">logout</i>
+                    </button>
+            </Link>
           </span>
 
           <h5
@@ -64,7 +97,6 @@ class Navbar extends Component {
 		  <h5 className="navbar-brand" style={{ color: "white" }}>
             Share {shareCount}
           </h5>
-
         </nav>
       </>
     );
