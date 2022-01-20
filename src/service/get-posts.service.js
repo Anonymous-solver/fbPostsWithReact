@@ -1,6 +1,6 @@
-import postData from './post-data.json';
+import postData from "./post-data.json";
 
-function getPostData(){
+function getPostData() {
 	return postData.posts;
 }
 
